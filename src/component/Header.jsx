@@ -9,7 +9,7 @@ const Header = () => {
 
 
     return (
-        <div className="container">
+        <div >
       <div className="navbar bg-transparent">
         <div className="flex-1 ">
         <Link to={'/'}>BongDine</Link>
