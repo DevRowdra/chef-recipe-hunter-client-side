@@ -56,7 +56,7 @@ const ChefDetails = () => {
         <div className="grid md:grid-cols-3 gap-y-6">
 
 { recipes.map(recipe=><div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+  <figure><img className='h-52' src={recipe.recipe_img} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
       {recipe.recipe_name}
