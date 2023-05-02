@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from './Pages/Loading';
 
 const Chef = () => {
   const [chefs, setChefs] = useState([]);
+  const [loader,setLoader]=useState(true)
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('http://localhost:3000/chef/');
       const data = await response.json();
       setChefs(data);
+      setLoader(false)
     };
     fetchData();
   }, []);
 console.log(chefs)
+if (loader) {
+  return <Loading></Loading>;
+}
   return (
     <div>
         

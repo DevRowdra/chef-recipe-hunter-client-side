@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigation } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import Loading from './Loading';
 import { AuthContext } from '../Provider/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
@@ -7,11 +7,16 @@ import { GithubAuthProvider } from "firebase/auth";
 const Login = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const navigation = useNavigation();
-  console.log(navigation.state);
-  if (navigation.state === 'loading') {
-    return <Loading></Loading>;
-  }
+  // const navigation = useNavigation();
+  const navigate=useNavigate()
+  // console.log(navigation.state);
+  // if (navigation.state === 'loading') {
+  //   return <Loading></Loading>;
+  // }
+const location=useLocation()
+console.log(location)
+const from=location.state?.from?.pathname
+console.log('first',from)
   const { loginUser,loginWithGoogle } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -27,6 +32,7 @@ const Login = () => {
         const loginUser = result.user;
         console.log(loginUser);
         setSuccess('user login success fully');
+        navigate(from || "/")
       })
       .catch((error) => {
         console.log(error);
@@ -39,6 +45,7 @@ const Login = () => {
     .then((result=>{
         const googleloged=result.user
         console.log(googleloged)
+        navigate(from || "/")
     }))
     .catch(error=>{
         console.log(error.message)
@@ -50,6 +57,7 @@ const Login = () => {
     .then((result=>{
         const githubloged=result.user
         console.log(githubloged)
+        navigate(from || "/")
     }))
     .catch(error=>{
         console.log(error.message)

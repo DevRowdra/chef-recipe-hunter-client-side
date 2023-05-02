@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation, useParams } from 'react-router-dom';
 import Loading from './Loading';
-import { FaStar } from 'react-icons/fa';
+import { FaBriefcase, FaConciergeBell, FaSmileBeam, FaStar } from 'react-icons/fa';
 import Derail from './Derail';
 
 const ChefDetails = () => {
@@ -51,10 +51,24 @@ const ChefDetails = () => {
             />
             <div>
               <h1 className="text-5xl font-bold">{chef.chef_name}</h1>
-              <p className="py-6">{chef.short_bio}</p>
-              <p className="py-6">Recipes: {chef.num_recipes}</p>
-              <p className="py-6">Experience: {chef.years_of_experience}</p>
-              <p className="py-6">Likes: {chef.likes}</p>
+
+              <div className="flex items-center gap-3">
+                <p className="py-6">{chef.short_bio}</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaConciergeBell></FaConciergeBell>
+                <p className="py-6">Recipes: {chef.num_recipes}</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaBriefcase></FaBriefcase>{' '}
+                <span className="py-6">
+                  Experience: {chef.years_of_experience}
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                {' '}<FaSmileBeam></FaSmileBeam>
+                <p className="py-6"> Likes: {chef.likes}</p>
+              </div>
             </div>
           </div>
         </div>

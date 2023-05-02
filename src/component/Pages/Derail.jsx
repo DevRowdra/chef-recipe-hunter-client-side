@@ -14,9 +14,9 @@ const Derail = ({recipe}) => {
             {recipe.recipe_name}
             
           </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>{recipe.cooking_method}</p>
           <button className="card-actions justify-end">
-              {recipe.ingredients.map(ig=> <div className="badge badge-outline">{ig}</div>  )}
+              {recipe.ingredients.map(ig=> <div className="badge badge-outline bg-yellow-400 border border-none">{ig}</div>  )}
             
           </button>
       <div className='flex items-center gap-3'>
