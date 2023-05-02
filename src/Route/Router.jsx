@@ -7,6 +7,7 @@ import Login from '../component/Pages/Login';
 import Register from '../component/Pages/Register';
 import Error from '../component/Pages/Error';
 import Loading from '../component/Pages/Loading';
+import ChefDetails from '../component/Pages/ChefDetails';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/chef/:id',
+        element:<ChefDetails></ChefDetails> ,
       },
       {
         path:'loader',
