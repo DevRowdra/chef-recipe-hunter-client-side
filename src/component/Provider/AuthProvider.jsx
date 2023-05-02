@@ -32,6 +32,7 @@ const auth=getAuth(app)
 
     const authInfo={
         user,
+        loader,
         createUser,
         loginUser,
         logoutUser,

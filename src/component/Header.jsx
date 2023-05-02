@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './Provider/AuthProvider';
 
 const Header = () => {
 
 
+const{user,logoutUser}=useContext(AuthContext)
 
-
+const handleLogout=()=>{
+logoutUser()
+.then(()=>{
+  console.log('logout com')
+})
+.catch((error)=>{
+  console.log(error.message)
+})
+}
 
 
     return (
@@ -27,19 +37,17 @@ const Header = () => {
             <li>
               <Link to='/register'>Register</Link>
             </li>
-           {/* {user &&  <li>
+           {user &&  <li>
               <p className='bg-gray-400 text-slate-50' >{user.displayName}</p>
-            </li>} */}
+            </li>}
           </ul>
-          <button className="btn btn-active btn-warning rounded-md">
-           <Link to='/login'>Login</Link>
-          </button>
-         {/* {user ? <button onClick={handleLogout} className="btn btn-active btn-warning rounded-md">
+          
+         {user ? <button onClick={handleLogout} className="btn btn-active btn-warning rounded-md">
             LogOut
           </button> :
           <button className="btn btn-active btn-warning rounded-md">
            <Link to='/login'>Login</Link>
-          </button>} */}
+          </button>}
         </div>
       </div>
     </div>

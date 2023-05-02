@@ -30,7 +30,7 @@ setSuccess('')
     })
     .catch(error=>{
         console.log(error.message)
-        setError('Password should be at least 6 characters')
+        setError(error.message)
     })
 }
 const updataUserName=(user,name,photo)=>{
@@ -85,7 +85,7 @@ const updataUserName=(user,name,photo)=>{
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="password"
                   name="password"
                   className="input input-bordered"

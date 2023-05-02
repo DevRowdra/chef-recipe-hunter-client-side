@@ -1,9 +1,14 @@
 import React from 'react';
 import Header from './Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from './Footer';
 
 const Main = () => {
+    const navigation = useNavigation()
+    console.log(navigation.state)
+  if (navigation.state === 'loading') {
+    return <Loading></Loading>
+  }
     return (
         <div className="container mx-auto" >
             <Header></Header>
