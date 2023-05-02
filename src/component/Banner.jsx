@@ -45,10 +45,10 @@ const Banner = () => {
             className="w-full"
           />
            <div className="absolute top-10 left-0 right-0  w-60">
-            <h2 className="text-white text-4xl font-bold text-center">
-              Salt Roasted Chicken
+            <h2 className="text-gray-500 text-4xl font-bold text-center">
+              Salt Roasted Chicken  
             </h2>
-            <p className="text-center text-blue-900">
+            <p className="text-center text-red-300">
               Easily add-in a short description about your recipe! This can be
               of any length. Remember, you are trying to sell your recipe!
             </p>

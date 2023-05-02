@@ -5,11 +5,12 @@ import Home from '../component/Pages/Home';
 import Blog from '../component/Pages/Blog';
 import Login from '../component/Pages/Login';
 import Register from '../component/Pages/Register';
+import Error from '../component/Pages/Error';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
-    
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',
