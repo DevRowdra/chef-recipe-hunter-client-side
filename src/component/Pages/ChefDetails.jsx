@@ -3,6 +3,8 @@ import { useNavigation, useParams } from 'react-router-dom';
 import Loading from './Loading';
 import { FaBriefcase, FaConciergeBell, FaSmileBeam, FaStar } from 'react-icons/fa';
 import Derail from './Derail';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const ChefDetails = () => {
   const { id } = useParams();
@@ -45,8 +47,9 @@ const ChefDetails = () => {
       <div>
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row">
-            <img
+            <LazyLoadImage
               src={chef.chef_picture}
+              effect="blur"
               className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>

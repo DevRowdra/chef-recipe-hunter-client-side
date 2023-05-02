@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from './Pages/Loading';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Chef = () => {
   const [chefs, setChefs] = useState([]);
@@ -29,9 +31,10 @@ if (loader) {
         {
             chefs.map(chef=><div className="card w-96 bg-red-100 shadow-xl">
             <figure>
-              <img 
+              <LazyLoadImage 
                 src={chef.chef_picture}
                 alt="chef"
+                effect="blur"
                 className='h-48 mt-3 '
               />
             </figure>
