@@ -81,7 +81,7 @@ const ChefDetails = () => {
         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className="grid md:grid-cols-3 gap-y-6">
           {recipes.map((recipe) => (
-            <Derail recipe={recipe}></Derail>
+            <Derail key={recipe.chef_id}  recipe={recipe}></Derail>
           ))}
         </div>
       </div>
