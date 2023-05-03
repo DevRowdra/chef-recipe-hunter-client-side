@@ -9,7 +9,7 @@ const Chef = () => {
   const [loader,setLoader]=useState(true)
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:3000/chef/');
+      const response = await fetch('https://chef-recipe-hunter-server-side-devrowdra.vercel.app/chef/');
       const data = await response.json();
       setChefs(data);
       setLoader(false)

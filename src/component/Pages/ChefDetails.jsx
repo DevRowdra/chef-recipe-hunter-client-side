@@ -23,8 +23,8 @@ const ChefDetails = () => {
   // }
   useEffect(() => {
     const fetchData = async () => {
-      const chefData = await fetch(`http://localhost:3000/chef/${id}`);
-      const recipes = await fetch(`http://localhost:3000/chef/recipe/${id}`);
+      const chefData = await fetch(`https://chef-recipe-hunter-server-side-devrowdra.vercel.app/chef/${id}`);
+      const recipes = await fetch(`https://chef-recipe-hunter-server-side-devrowdra.vercel.app/chef/recipe/${id}`);
 
       const data1 = await chefData.json();
       const data2 = await recipes.json();

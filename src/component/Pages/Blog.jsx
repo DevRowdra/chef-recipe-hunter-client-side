@@ -31,19 +31,20 @@ const Blog = () => {
           <h1 className="my-7 text-3xl font-semibold">
             Differences between uncontrolled and controlled components.
           </h1>
-          Controlled components are  predictable and easier to
-          manage, becouse the system maintains control of their state and behavior.
+          Controlled components are predictable and easier to manage, becouse
+          the system maintains control of their state and behavior.
           <br />
-          Uncontrolled components more flexible and
-          versatile, but it be more difficult to manage and validate, as
-          their state is not always under the direct control of our system.
+          Uncontrolled components more flexible and versatile, but it be more
+          difficult to manage and validate, as their state is not always under
+          the direct control of our system.
         </div>
         <div className="border rounded-md shadow-xl p-8">
           <div className="badge badge-secondary bg-pink-400">Best Blog</div>
           <h1 className="my-7 text-3xl font-semibold">
             How to validate React props using PropTypes
           </h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+          <code> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat</code>
+         
           blanditiis fugit sit magni neque deserunt, repellendus doloribus esse
           ipsam quae enim tenetur, vitae harum nobis excepturi aperiam error
           dolorem! Delectus?
@@ -53,26 +54,24 @@ const Blog = () => {
           <h1 className="my-7 text-3xl font-semibold">
             Difference between nodejs and express js.
           </h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          blanditiis fugit sit magni neque deserunt, repellendus doloribus esse
-          ipsam quae enim tenetur, vitae harum nobis excepturi aperiam error
-          dolorem! Delectus?
+          Node.js is a JavaScript runtime that allows us to run
+          JavaScript code in the server-side,and Express.js is a framework
+          built on top of Node.js it make easy the process of building web
+          applications.
+          Node.js can be used to build a wide range of applications,  web servers, command-line tools, desktop applications, and  Express.js is specifically designed for building web applications.
         </div>
         <div className="border rounded-md shadow-xl p-8">
           <div className="badge badge-secondary bg-pink-400">Best Blog</div>
           <h1 className="my-7 text-3xl font-semibold">
             What is a custom hook, and why will you create a custom hook?
           </h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          blanditiis fugit sit magni neque deserunt, repellendus doloribus esse
-          ipsam quae enim tenetur, vitae harum nobis excepturi aperiam error
-          dolorem! Delectus?
+          Custom hook is a reusable function that encapsulates a certain set of logic It can be shared  different components in a React . Custom hooks allow us to extract common functionality into a single location.It can help to improve code organization, reduce duplication, and make the codebase more modular and easier to maintain.
         </div>
       </div>
-      <div className="">
+      <div className="text-center mt-7">
         <div className="">
           <button
-            className=""
+            className="btn btn-error"
             onClick={downloadPDF}
             disabled={!(loader === false)}
           >

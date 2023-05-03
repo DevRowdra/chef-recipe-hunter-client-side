@@ -19,13 +19,13 @@ const Header = () => {
     <div>
       <div className="navbar bg-transparent">
         <div className="flex-1 ">
-          <Link to={'/'}>BongDine</Link>
+          <Link className='text-2xl font-semibold' to={'/'}>BongDine</Link>
         </div>
 
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             <li>
-            <NavLink
+              <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
                   isPending ? 'pending' : isActive ? 'active' : ''
@@ -34,8 +34,8 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li >
-            <NavLink
+            <li>
+              <NavLink
                 to="/blog"
                 className={({ isActive, isPending }) =>
                   isPending ? 'pending' : isActive ? 'active' : ''
@@ -46,7 +46,7 @@ const Header = () => {
             </li>
 
             <li>
-            <NavLink
+              <NavLink
                 to="/register"
                 className={({ isActive, isPending }) =>
                   isPending ? 'pending' : isActive ? 'active' : ''
@@ -55,18 +55,24 @@ const Header = () => {
                 Register
               </NavLink>
             </li>
-            
+
             {user && (
-              <li>
-                <p className="bg-gray-400 text-slate-50">{user.displayName}</p>
-              </li>
+              <div class="avatar relative">
+                <div class="w-12 rounded-full">
+                  <img src={user?.photoURL} />
+                </div>
+                
+                <div className='bg-black text-center bg-opacity-50 text-white rounded-full absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-200 '>
+                <p className="relative top-3" title={user.displayName} >{user?.displayName ?.substring(0, 5)}</p>
+              </div>
+               
+              </div>
             )}
           </ul>
 
           {user ? (
             <Link
               onClick={handleLogout}
-              
               className="btn btn-active btn-warning rounded-md "
             >
               LogOut

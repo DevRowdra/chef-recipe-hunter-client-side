@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Categories = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/categories')
+    fetch('https://chef-recipe-hunter-server-side-devrowdra.vercel.app/categories')
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error));
