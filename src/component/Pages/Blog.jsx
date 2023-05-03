@@ -1,11 +1,70 @@
 import React from 'react';
+import {useState} from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const Blog = () => {
-    return (
-        <div>
-            <h1>blog</h1>
+
+    const [loader, setLoader] = useState(false);
+
+    const downloadPDF = () =>{
+      const capture = document.querySelector('#blog');
+      setLoader(true);
+      html2canvas(capture).then((canvas)=>{
+        const imgData = canvas.toDataURL('img/png');
+        const doc = new jsPDF('p', 'mm', 'a3');
+        const componentWidth = doc.internal.pageSize.getWidth();
+        const componentHeight = doc.internal.pageSize.getHeight();
+        doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+        setLoader(false);
+        doc.save('blog.pdf');
+      })
+    }
+
+
+
+  return (
+    <div>
+      <div
+        className="grid grid-cols-2 gap-4"
+        id="blog"
+      >
+        <div className='border rounded-md shadow-xl p-8'>
+        <div className="badge badge-secondary bg-pink-400">Best Blog</div>
+        <h1 className='my-7 text-3xl font-semibold'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, molestiae!</h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+          blanditiis fugit sit magni neque deserunt, repellendus doloribus esse
+          ipsam quae enim tenetur, vitae harum nobis excepturi aperiam error
+          dolorem! Delectus?
         </div>
-    );
+        <div className='border rounded-md shadow-xl p-8'>
+        <div className="badge badge-secondary bg-pink-400">Best Blog</div>
+        <h1 className='my-7 text-3xl font-semibold'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, molestiae!</h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+          blanditiis fugit sit magni neque deserunt, repellendus doloribus esse
+          ipsam quae enim tenetur, vitae harum nobis excepturi aperiam error
+          dolorem! Delectus?
+        </div>
+       
+      </div>
+      <div className="">
+            <div className="">
+              <button
+                className=""
+                onClick={downloadPDF}
+                disabled={!(loader===false)}
+              >
+                {loader?(
+                  <span>Downloading</span>
+                ):(
+                  <span>Download</span>
+                )}
+
+              </button> 
+            </div>
+          </div>
+    </div>
+  );
 };
 
 export default Blog;
