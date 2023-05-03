@@ -15,8 +15,8 @@ const Login = () => {
   // }
 const location=useLocation()
 console.log(location)
-const from=location.state?.from?.pathname
-console.log('first',from)
+const froms=location.state?.from?.pathname
+// console.log('first',from)
   const { loginUser,loginWithGoogle } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ console.log('first',from)
         const loginUser = result.user;
         console.log(loginUser);
         setSuccess('user login success fully');
-        navigate(from || "/")
+        navigate(froms || "/")
       })
       .catch((error) => {
         console.log(error);
@@ -45,7 +45,7 @@ console.log('first',from)
     .then((result=>{
         const googleloged=result.user
         console.log(googleloged)
-        navigate(from || "/")
+        navigate(froms || "/")
     }))
     .catch(error=>{
         console.log(error.message)
@@ -57,7 +57,7 @@ console.log('first',from)
     .then((result=>{
         const githubloged=result.user
         console.log(githubloged)
-        navigate(from || "/")
+        navigate(froms || "/")
     }))
     .catch(error=>{
         console.log(error.message)

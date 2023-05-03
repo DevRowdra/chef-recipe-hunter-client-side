@@ -43,11 +43,26 @@ const Blog = () => {
           <h1 className="my-7 text-3xl font-semibold">
             How to validate React props using PropTypes
           </h1>
-          <code> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat</code>
+          
          
-          blanditiis fugit sit magni neque deserunt, repellendus doloribus esse
-          ipsam quae enim tenetur, vitae harum nobis excepturi aperiam error
-          dolorem! Delectus?
+          1.We can use the prop-types library that comes with React.
+          2.First, install the prop-types package using npm. <br />
+          3.Import the PropTypes object from the prop-types package. <br />
+          4.Define the expected prop types for your component using the propTypes property:
+          <pre>
+        <code>
+          {`MyComponent.propTypes = {
+  prop1: PropTypes.string,
+  prop2: PropTypes.number.isRequired,
+  prop3: PropTypes.arrayOf(PropTypes.string),
+  prop4: PropTypes.shape({
+    prop5: PropTypes.string,
+    prop6: PropTypes.number,
+  }),
+};`}
+        </code>
+      </pre>
+
         </div>
         <div className="border rounded-md shadow-xl p-8">
           <div className="badge badge-secondary bg-pink-400">Best Blog</div>

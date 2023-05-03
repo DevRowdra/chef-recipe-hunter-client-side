@@ -16,10 +16,10 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <div className="navbar bg-transparent">
-        <div className="flex-1 ">
-          <Link className='text-2xl font-semibold' to={'/'}>BongDine</Link>
+    <div className='overflow-hidden'>
+      <div className="navbar bg-transparent flex-col md:flex-row">
+        <div className="flex-1 flex-row ">
+          <Link className='lg:text-2xl lg:font-semibold text-4xl bg-yellow-500 p-2 rounded-xl ' to={'/'}>BongDine</Link>
         </div>
 
         <div className="flex-none">
@@ -28,7 +28,7 @@ const Header = () => {
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? 'active' : ''
+                  isPending ? 'pending ' : isActive ? 'active ' : ''
                 }
               >
                 Home
@@ -37,9 +37,10 @@ const Header = () => {
             <li>
               <NavLink
                 to="/blog"
-                className={({ isActive, isPending }) =>
+                className={ ({ isActive, isPending }) =>
                   isPending ? 'pending' : isActive ? 'active' : ''
                 }
+               
               >
                 Blog
               </NavLink>
@@ -50,7 +51,7 @@ const Header = () => {
                 to="/register"
                 className={({ isActive, isPending }) =>
                   isPending ? 'pending' : isActive ? 'active' : ''
-                }
+                 }
               >
                 Register
               </NavLink>
@@ -78,7 +79,7 @@ const Header = () => {
               LogOut
             </Link>
           ) : (
-            <button className="btn btn-active btn-warning rounded-md">
+            <button className="btn btn-active btn-warning  rounded-md">
               <Link to="/login">Login</Link>
             </button>
           )}

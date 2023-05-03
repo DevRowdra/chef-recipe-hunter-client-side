@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import img1 from '../../assets/eventsandBlog pic/blog1.jpg';
 import img2 from '../../assets/eventsandBlog pic/blog2.jpg';
 import img3 from '../../assets/eventsandBlog pic/blog3.jpg';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { AuthContext } from '../Provider/AuthProvider';
 const EventsAndBlog = () => {
+ 
   return (
     <div className="my-32">
+     
       <div>
         <h1 className="text-2xl text-center text-orange-400">
           The Latest News
         </h1>
-        <h1 className="text-center text-5xl mt-7">Our Blog & Events</h1>
+        <h1 className="text-center text-5xl mt-7">Our  Events</h1>
       </div>
       <div className="grid lg:grid-cols-3 gap-10 border  p-14">
         <div>
