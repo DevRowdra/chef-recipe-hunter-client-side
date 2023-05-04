@@ -6,11 +6,31 @@ import jsPDF from 'jspdf';
 const Blog = () => {
   const [loader, setLoader] = useState(false);
 
+  // const downloadPDF = () => {
+  //   const capture = document.querySelector('#blog');
+  //   setLoader(true);
+  //   html2canvas(capture).then((canvas) => {
+  //     const imgData = canvas.toDataURL('img/png');
+  //     const doc = new jsPDF('p', 'mm', 'a3');
+  //     const componentWidth = doc.internal.pageSize.getWidth();
+  //     const componentHeight = doc.internal.pageSize.getHeight();
+  //     doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+  //     setLoader(false);
+  //     doc.save('blog.pdf');
+  //   });
+  // };
   const downloadPDF = () => {
     const capture = document.querySelector('#blog');
     setLoader(true);
-    html2canvas(capture).then((canvas) => {
-      const imgData = canvas.toDataURL('img/png');
+    const options = {
+      scale: 2, 
+      scrollY: -window.scrollY, 
+      logging: true, 
+      width: capture.offsetWidth, 
+      height: capture.offsetHeight,
+    };
+    html2canvas(capture, options).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
       const doc = new jsPDF('p', 'mm', 'a3');
       const componentWidth = doc.internal.pageSize.getWidth();
       const componentHeight = doc.internal.pageSize.getHeight();
@@ -19,6 +39,8 @@ const Blog = () => {
       doc.save('blog.pdf');
     });
   };
+  
+  
 
   return (
     <div>

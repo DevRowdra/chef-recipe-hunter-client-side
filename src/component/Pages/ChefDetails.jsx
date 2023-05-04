@@ -11,16 +11,8 @@ const ChefDetails = () => {
   const [chef, setChef] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [loader, setLoader] = useState(true);
-  const [disabledButtons, setDisabledButtons] = useState(false);
-  //   const navigation = useNavigation()
-  //   console.log(navigation.state)
-  // if (navigation.state === 'loading') {
-  //   return <h1>loading</h1>
-  // }
-  // const handleFavorite=()=>{
-  //   console.log('first')
-  //   setDisabledButtons(true)
-  // }
+  
+
   useEffect(() => {
     const fetchData = async () => {
       const chefData = await fetch(`https://chef-recipe-hunter-server-side-devrowdra.vercel.app/chef/${id}`);

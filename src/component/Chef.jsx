@@ -8,7 +8,7 @@ const Chef = () => {
   const [chefs, setChefs] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    const fetchData = async () => {
+    const fData = async () => {
       const response = await fetch(
         'https://chef-recipe-hunter-server-side-devrowdra.vercel.app/chef/'
       );
@@ -16,7 +16,7 @@ const Chef = () => {
       setChefs(data);
       setLoader(false);
     };
-    fetchData();
+    fData();
   }, []);
   console.log(chefs);
   if (loader) {

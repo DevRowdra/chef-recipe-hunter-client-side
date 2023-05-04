@@ -8,12 +8,9 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 const Login = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  // const navigation = useNavigation();
+  
   const navigate=useNavigate()
-  // console.log(navigation.state);
-  // if (navigation.state === 'loading') {
-  //   return <Loading></Loading>;
-  // }
+  
 const location=useLocation()
 console.log(location)
 const froms=location.state?.from?.pathname || '/'
