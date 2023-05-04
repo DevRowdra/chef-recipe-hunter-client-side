@@ -15,7 +15,7 @@ const Login = () => {
   // }
 const location=useLocation()
 console.log(location)
-const froms=location.state?.from?.pathname
+const froms=location.state?.from?.pathname || '/'
 // console.log('first',from)
   const { loginUser,loginWithGoogle } = useContext(AuthContext);
   const handleLogin = (e) => {
@@ -32,7 +32,7 @@ const froms=location.state?.from?.pathname
         const loginUser = result.user;
         console.log(loginUser);
         setSuccess('user login success fully');
-        navigate(froms || "/")
+        navigate(froms || { replace: true })
       })
       .catch((error) => {
         console.log(error);
@@ -45,7 +45,7 @@ const froms=location.state?.from?.pathname
     .then((result=>{
         const googleloged=result.user
         console.log(googleloged)
-        navigate(froms || "/")
+        navigate(froms )
     }))
     .catch(error=>{
         console.log(error.message)

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './Provider/AuthProvider';
 
 const Header = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { user, logoutUser,photo } = useContext(AuthContext);
 
   const handleLogout = () => {
     logoutUser()
@@ -64,7 +64,7 @@ const Header = () => {
             {user && (
               <div className="avatar relative">
                 <div className="w-12 rounded-full">
-                  <img src={user?.photoURL} />
+                  <img src={user?.photoURL || photo} />
                 </div>
 
                 <div className="bg-black text-center bg-opacity-50 text-white rounded-full absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-200 ">

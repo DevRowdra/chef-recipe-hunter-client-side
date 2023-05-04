@@ -10,7 +10,7 @@ const EventsAndBlog = () => {
     <div className="my-32">
      
       <div>
-        <h1 className="text-2xl text-center text-orange-400">
+        <h1 className="text-2xl text-center text-orange-400 " style={{fontFamily:'monospace'}}>
           The Latest News
         </h1>
         <h1 className="text-center text-5xl mt-7">Our  Events</h1>

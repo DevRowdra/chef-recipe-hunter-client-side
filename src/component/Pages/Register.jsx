@@ -7,7 +7,7 @@ import { GithubAuthProvider } from "firebase/auth";
 const Register = () => {
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
-    const {createUser,loginWithGoogle}=useContext(AuthContext)
+    const {createUser,loginWithGoogle,setPhoto}=useContext(AuthContext)
 
 const navigate=useNavigate()
 
@@ -42,6 +42,7 @@ const updataUserName=(user,name,photo)=>{
     })
     .then(()=>{
         console.log('updata user name')
+        setPhoto(photo)
     })
     .catch((error)=>{
         console.log(error.message)

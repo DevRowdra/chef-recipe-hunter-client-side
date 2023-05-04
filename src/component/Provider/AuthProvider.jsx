@@ -5,6 +5,7 @@ import app from '../../../firebase.config';
 export const AuthContext=createContext(null)
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null)
+    const [photo,setPhoto]=useState('')
     const [loader,setLoader]=useState(true)
 const auth=getAuth(app)
 
@@ -44,6 +45,7 @@ const auth=getAuth(app)
         loginUser,
         logoutUser,
         loginWithGoogle,
+        photo,setPhoto
 
     }
     return (

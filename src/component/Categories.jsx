@@ -11,7 +11,7 @@ const Categories = () => {
   return (
     <div className="m-5">
       <div className="text-center">
-        <h1 className="text-2xl text-amber-400">Choose a Category</h1>
+        <h1 className="text-2xl text-amber-400" style={{fontFamily:'monospace'}}>Choose a Category</h1>
         <h1 className="text-6xl font-medium">Recipe Categories</h1>
       </div>
       <div className="grid md:grid-cols-5 mt-10">
