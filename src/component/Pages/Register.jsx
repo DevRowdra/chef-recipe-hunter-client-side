@@ -4,6 +4,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
+import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
 const Register = () => {
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
@@ -80,8 +81,8 @@ const handelGithubLogin=()=>{
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Register now!</h1>
             <p className="py-6">No one can make it like us</p>
-            <button onClick={handelGoogleLogin} className="btn m-2  bg-slate-400">Login with Google </button>
-            <button onClick={handelGithubLogin} className="btn  m-2 bg-slate-400">Login with GitHub </button>
+            <button onClick={handelGoogleLogin} className="btn m-2  bg-slate-400"> <FaGoogle className='me-1'></FaGoogle>  Login with Google </button>
+            <button onClick={handelGithubLogin} className="btn  m-2 bg-slate-400"> <FaGithub className='me-1'></FaGithub> Login with GitHub </button>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">

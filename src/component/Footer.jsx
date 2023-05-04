@@ -28,9 +28,8 @@ const Footer = () => {
         <div>
           <span className="footer-title">BongDine</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />{' '}
-            Nullam interdum leo at finibus ornare. Aliquam gravida <br />{' '}
-            condimentum neque, vel ultrices purus dignissim a.
+          Discover mouth-watering recipes for every occasion on our  <br />{' '}food recipe website. Our team of chefs and food bloggers <br />{' '} curate easy-to-follow recipes with step-by-step <br />{' '}instructions and nutritional information. Whether <br />{' '}you're a novice cook or an experienced home chef, we <br />{' '}have something for everyone. Start exploring our <br />{' '}collection of recipes today and create lasting <br />{' '}memories with your loved ones.<br />{' '}
+            
           </p>
         </div>
         <div>

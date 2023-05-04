@@ -4,6 +4,7 @@ import Loading from './Loading';
 import { AuthContext } from '../Provider/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 const Login = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -70,8 +71,8 @@ const froms=location.state?.from?.pathname || '/'
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">Cooking is one of the greatest gifts.</p>
-            <button onClick={handelGoogleLogin} className="btn m-2  bg-slate-400">Login with Google </button>
-            <button onClick={handelGithubLogin} className="btn  m-2 bg-slate-400">Login with GitHub </button>
+            <button onClick={handelGoogleLogin} className="btn m-2  bg-slate-400"><FaGoogle className='me-1'></FaGoogle>  Login with Google  </button>
+            <button onClick={handelGithubLogin} className="btn  m-2 bg-slate-400"><FaGithub className='me-1'></FaGithub> Login with GitHub </button>
           </div>
 
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
