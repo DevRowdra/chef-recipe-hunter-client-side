@@ -1,24 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import Loading from './Loading';
 
 const Blog = () => {
   const [loader, setLoader] = useState(false);
 
-  // const downloadPDF = () => {
-  //   const capture = document.querySelector('#blog');
-  //   setLoader(true);
-  //   html2canvas(capture).then((canvas) => {
-  //     const imgData = canvas.toDataURL('img/png');
-  //     const doc = new jsPDF('p', 'mm', 'a3');
-  //     const componentWidth = doc.internal.pageSize.getWidth();
-  //     const componentHeight = doc.internal.pageSize.getHeight();
-  //     doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
-  //     setLoader(false);
-  //     doc.save('blog.pdf');
-  //   });
-  // };
+  
+  // add manual page loader
+const[pageLoader,setPageLoader]=useState(true)
+useEffect(()=>{
+setTimeout(() => {
+  setPageLoader(false)
+}, 1000);
+
+},[])
+
   const downloadPDF = () => {
     const capture = document.querySelector('#blog');
     setLoader(true);
@@ -40,7 +38,9 @@ const Blog = () => {
     });
   };
   
-  
+  if (pageLoader) {
+    return <Loading></Loading>
+  }
 
   return (
     <div>
