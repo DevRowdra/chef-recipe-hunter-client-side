@@ -1,22 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import img1 from '../../assets/eventsandBlog pic/blog1.jpg';
 import img2 from '../../assets/eventsandBlog pic/blog2.jpg';
 import img3 from '../../assets/eventsandBlog pic/blog3.jpg';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const EventsAndBlog = () => {
- 
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <div className="my-32">
-     
-      <div>
-        <h1 className="text-2xl text-center text-orange-400 " style={{fontFamily:'monospace'}}>
+      <div data-aos="fade-down"
+     data-aos-duration="1000">
+        <h1
+          className="text-2xl text-center text-orange-400 "
+          style={{ fontFamily: 'monospace' }}
+        >
           The Latest News
         </h1>
-        <h1 className="text-center text-5xl mt-7">Our  Events</h1>
+        <h1 className="text-center text-5xl mt-7">Our Events</h1>
       </div>
       <div className="grid lg:grid-cols-3 gap-10 border  p-14">
-        <div>
+        <div data-aos="flip-left"  data-aos-duration="1000">
           <img
             src={img1}
             alt=""
@@ -32,12 +40,14 @@ const EventsAndBlog = () => {
             Japanese Horseradish : True Fact About Ramen
           </h3>
           <p className="text-slate-400">
-          Japanese horseradish, also known as "wasabi," is a commonly used condiment in Japanese cuisine, including ramen. Wasabi has a strong, pungent flavor and is often served with sushi, sashimi, and other Japanese dishes.
-
-However, it is important to note that many of the "wasabi" products sold in the United States...
+            Japanese horseradish, also known as "wasabi," is a commonly used
+            condiment in Japanese cuisine, including ramen. Wasabi has a strong,
+            pungent flavor and is often served with sushi, sashimi, and other
+            Japanese dishes. However, it is important to note that many of the
+            "wasabi" products sold in the United States...
           </p>
         </div>
-        <div>
+        <div data-aos="flip-right"  data-aos-duration="1000">
           <img
             src={img2}
             alt=""
@@ -59,7 +69,7 @@ However, it is important to note that many of the "wasabi" products sold in the 
             water, herbal tea, and fresh juice can help you stay hydrated...
           </p>
         </div>
-        <div>
+        <div data-aos="flip-left"  data-aos-duration="1000">
           <img
             src={img3}
             alt=""
