@@ -4,6 +4,7 @@ import pic2 from '../assets/caro pic/Fotolia_20703315_Subscription_L-800x475.jpg
 import pic3 from '../assets/caro pic/Fotolia_4619038_Subscription_L-800x475.jpg';
 import pic4 from '../assets/caro pic/Fotolia_6221608_Subscription_L-800x475.jpg';
 const Banner = () => {
+  // test
   return (
     <div>
       <div className="carousel w-full h-auto  ">
